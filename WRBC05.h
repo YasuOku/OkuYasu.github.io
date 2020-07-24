@@ -73,16 +73,16 @@ void storeGear_driven(double module, int tooth_num, double pressure_angle, vecto
 void drawGear_driven(vector<coord2d>& gear_plots, double offset_x);
 void design_driven_gear(double dist_of_center, double coefficient, double module, double pressure_angle, int tooth_num, int div_num);
 
-void thooth_drawing(double img_std_diameter, double module, double pressure_angle, coord2d vct, vector<coord2d>& plots);
-coord2d involute_drawing(double angle, double pressure_angle, double start_angle, double std_diameter);
-double TT_to_Angle(double std_diameter, double module, double pressure_angle, double target_diameter);
+void thooth_drawing(double img_std_diameter, double module, double pressure_angle, double clearance, coord2d vct, vector<coord2d>& plots);
+coord2d involute_drawing(double angle, double pressure_angle, double std_diameter);
+double TT_to_Angle(double std_diameter, double module, double pressure_angle, double backlash, double target_diameter);
 double inv(double angle);
-coord2d circle_drawing(double angle, double module, double std_diameter);
 void paramove(double dx, double dy, vector<coord2d>& plots);
 void rotmove(double theta, vector<coord2d>& plots);
+void rotmove(double theta, coord2d& plots);
 void mirroring_y(vector<coord2d>& plots);
 double Speed(const double shrink, const double angle);
-double DrivingGear_rad(const double perimeter, const double speed);
-double DrivenGear_rad(const double perimeter, const double speed);
+double DrivingGear_rad(const double dist_of_center, const double shrink, const double angle);
+double DrivenGear_rad(const double dist_of_center, const double shrink, const double angle);
 coord2d calc_center(coord2d& p1, coord2d& p2, coord2d& p3);
 double distance(coord2d p1, coord2d p2);
